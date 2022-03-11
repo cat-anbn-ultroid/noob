@@ -79,7 +79,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
                 duration = data["duration"]
                 thumb_path = await screenshot(file, duration, sender)
                 await client.send_video(
-                    chat_id=sender,
+                    chat_id=tochnl,
                     video=file,
                     caption=caption,
                     supports_streaming=True,
@@ -99,7 +99,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
             else:
                 thumb_path=thumbnail(sender)
                 await client.send_document(
-                    sender,
+                    tochnl,
                     file, 
                     caption=caption,
                     thumb=thumb_path,
